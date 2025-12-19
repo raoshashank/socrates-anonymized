@@ -1,0 +1,208 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "WITHIN_ELEVATOR",
+            "pos": [
+                216,
+                11
+            ],
+            "id": "32"
+        },
+        {
+            "type": "WITHIN_ELEVATOR",
+            "pos": [
+                222,
+                36
+            ],
+            "id": "70"
+        },
+        {
+            "type": "WITHIN_ELEVATOR",
+            "pos": [
+                282,
+                16
+            ],
+            "id": "49"
+        },
+        {
+            "type": "WITHIN_ELEVATOR",
+            "pos": [
+                276,
+                38
+            ],
+            "id": "44"
+        },
+        {
+            "type": "OUTSIDE_ELEVATOR",
+            "pos": [
+                214,
+                65
+            ],
+            "id": "92"
+        },
+        {
+            "type": "OUTSIDE_ELEVATOR",
+            "pos": [
+                282,
+                61
+            ],
+            "id": "4d"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                247,
+                97
+            ],
+            "id": "d6"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                211,
+                128
+            ],
+            "id": "c7"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                242,
+                147
+            ],
+            "id": "e1"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                279,
+                132
+            ],
+            "id": "bd"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                232,
+                199
+            ],
+            "id": "69"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                180,
+                185
+            ],
+            "id": "58"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                296,
+                190
+            ],
+            "id": "eb"
+        }
+    ],
+    "links": [
+        {
+            "type": "SIMPLE EDGE",
+            "source": "32",
+            "target": "70"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "32",
+            "target": "92"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "70",
+            "target": "92"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "49",
+            "target": "44"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "49",
+            "target": "4d"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "44",
+            "target": "4d"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "92",
+            "target": "d6"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "92",
+            "target": "c7"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "92",
+            "target": "4d"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "4d",
+            "target": "d6"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "4d",
+            "target": "bd"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "d6",
+            "target": "c7"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "d6",
+            "target": "bd"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "d6",
+            "target": "e1"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "c7",
+            "target": "e1"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "e1",
+            "target": "bd"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "e1",
+            "target": "58"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "e1",
+            "target": "69"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "e1",
+            "target": "eb"
+        }
+    ]
+}

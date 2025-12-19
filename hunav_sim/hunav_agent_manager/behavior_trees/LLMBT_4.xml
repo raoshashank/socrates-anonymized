@@ -1,0 +1,20 @@
+
+<root main_tree_to_execute='humanbehaviortree'>
+    <include path='BTRegularNav.xml'/>
+    <BehaviorTree ID='humanbehaviortree'>
+        <Fallback name='behavior_fallback'>
+            <Sequence name='scared_and_run_sequence'>
+                <IsRobotVisible agent_id="{id}" distance="5.0"/>
+                <Inverter>
+                    <TimeExpiredCondition seconds="8.0" ts="{dt}" only_once="True"/>
+                </Inverter>
+                <RunAwayFromRobot agent_id="{id}" time_step="{dt}"/>
+            </Sequence>
+            <Sequence name='RegNav'>
+                <SetBlackboard output_key='agentid' value='{id}' />
+                <SetBlackboard output_key='timestep' value='{dt}' />
+                <SubTree ID='RegularNavTree' id='agentid' dt='timestep'/>
+            </Sequence>
+        </Fallback>
+    </BehaviorTree>
+</root>

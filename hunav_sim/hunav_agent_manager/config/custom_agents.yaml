@@ -1,0 +1,68 @@
+hunav_loader:
+  ros__parameters:
+    agents:
+    - human1
+    - human2
+    - human3
+    human1:
+      behavior: 7
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -5.0
+        y: -8.800000000000004
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 0
+      id: 0
+      init_pose:
+        h: 3.141592653589793
+        x: -3.5118296774913427
+        y: -8.800000000000004
+        z: 1.25
+      max_vel: 1.0
+      radius: 0.4
+      skin: 0
+    human2:
+      behavior: 8
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -5.0
+        y: -8.800000000000004
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 0
+      id: 1
+      init_pose:
+        h: 5.235987755982988
+        x: -5.427682587236103
+        y: -8.059232029394565
+        z: 1.25
+      max_vel: 1.0
+      radius: 0.4
+      skin: 2
+    human3:
+      behavior: 9
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -5.0
+        y: -8.800000000000004
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 0
+      id: 2
+      init_pose:
+        h: 7.330382858376184
+        x: -5.565142834421992
+        y: -9.778856102752378
+        z: 1.25
+      max_vel: 1.0
+      radius: 0.4
+      skin: 2
+    map: hospital
+    publish_people: true

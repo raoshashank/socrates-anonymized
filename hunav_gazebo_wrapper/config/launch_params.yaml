@@ -1,0 +1,3 @@
+robot_poses: ../hunav_gazebo_wrapper/config/robot_poses.yaml
+scenario: ../hunav_gazebo_wrapper/config/trajectory.json
+world_name: hospital

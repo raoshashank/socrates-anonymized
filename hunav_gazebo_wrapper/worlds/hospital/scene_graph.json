@@ -1,0 +1,211 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "WITHIN_ELEVATOR_1",
+            "pos": [
+                381,
+                180
+            ],
+            "id": "56"
+        },
+        {
+            "type": "WITHIN_ELEVATOR_1",
+            "pos": [
+                381,
+                192
+            ],
+            "id": "46"
+        },
+        {
+            "type": "WITHIN_ELEVATOR_2",
+            "pos": [
+                413,
+                179
+            ],
+            "id": "ac"
+        },
+        {
+            "type": "WITHIN_ELEVATOR_2",
+            "pos": [
+                413,
+                192
+            ],
+            "id": "d1"
+        },
+        {
+            "type": "OUTSIDE_ELEVATOR_1",
+            "pos": [
+                379,
+                209
+            ],
+            "id": "24"
+        },
+        {
+            "type": "OUTSIDE_ELEVATOR_2",
+            "pos": [
+                414,
+                208
+            ],
+            "id": "a4"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                378,
+                228
+            ],
+            "id": "d3"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                413,
+                228
+            ],
+            "id": "66"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                393,
+                229
+            ],
+            "id": "19"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                392,
+                246
+            ],
+            "id": "2d"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                373,
+                260
+            ],
+            "id": "5b"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                415,
+                257
+            ],
+            "id": "21"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                376,
+                243
+            ],
+            "id": "5f"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                414,
+                242
+            ],
+            "id": "6d"
+        }
+    ],
+    "links": [
+        {
+            "type": "SIMPLE EDGE",
+            "source": "56",
+            "target": "46"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "46",
+            "target": "24"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "ac",
+            "target": "d1"
+        },
+        {
+            "type": "ELEVATOR_DOORWAY",
+            "source": "d1",
+            "target": "a4"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "24",
+            "target": "d3"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "24",
+            "target": "19"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "24",
+            "target": "a4"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "a4",
+            "target": "66"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "a4",
+            "target": "19"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "d3",
+            "target": "5f"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "d3",
+            "target": "19"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "66",
+            "target": "19"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "66",
+            "target": "6d"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "19",
+            "target": "2d"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "2d",
+            "target": "5b"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "2d",
+            "target": "21"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "5b",
+            "target": "5f"
+        },
+        {
+            "type": "HALLWAY",
+            "source": "21",
+            "target": "6d"
+        }
+    ]
+}

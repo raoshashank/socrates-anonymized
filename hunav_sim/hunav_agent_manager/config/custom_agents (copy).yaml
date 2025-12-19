@@ -1,0 +1,68 @@
+hunav_loader:
+  ros__parameters:
+    agents:
+    - human1
+    - human2
+    - human3
+    human1:
+      behavior: 7
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -2.790217161178589
+        y: 1.3000000715255737
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 1
+      id: 0
+      init_pose:
+        h: 3.141592653589793
+        x: -3.3306058592693373
+        y: 1.299999999999999
+        z: 1.25
+      max_vel: 1.5
+      radius: 0.4
+      skin: 0
+    human2:
+      behavior: 8
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -4.2017011642456055
+        y: 1.9957668781280518
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 1
+      id: 1
+      init_pose:
+        h: 5.235987755982988
+        x: -3.897698666265389
+        y: 1.4692190538033707
+        z: 1.25
+      max_vel: 1.5
+      radius: 0.4
+      skin: 1
+    human3:
+      behavior: 9
+      cyclic_goals: false
+      g1:
+        h: 1.25
+        x: -4.104959011077881
+        y: 0.7717960476875305
+      goal_radius: 0.5
+      goals:
+      - g1
+      group_id: 1
+      id: 2
+      init_pose:
+        h: 7.330382858376184
+        x: -3.919015783148077
+        y: 1.093858616684928
+        z: 1.25
+      max_vel: 1.5
+      radius: 0.4
+      skin: 2
+    map: small_warehouse
+    publish_people: true
