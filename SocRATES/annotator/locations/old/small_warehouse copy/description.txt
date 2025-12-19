@@ -1,0 +1,1 @@
+Small Warehouse that consists of various racks and packaging areas. The warehouse consists of passageways, intersections, narrow aisles, corners, open areas.

@@ -1,0 +1,70 @@
+# Basic Nodes
+Fallback:
+  name: string
+Sequence:
+  name: string
+Inverter: {}
+TimeExpiredCondition:
+  only_once: bool
+  seconds: float
+  ts: "{dt}"
+# Actions
+BlockRobot:
+  agent_id: "{id}"
+  time_step: "{dt}"
+FollowHuman:
+  agent_id: "{id}"
+  target_id: int
+  time_step: "{dt}"
+FollowRobot:
+  agent_id: "{id}"
+  time_step: "{dt}"
+GiveWaytoRobot:
+  agent_id: "{id}"
+  time_step: "{dt}"
+LookAtRobot:
+  agent_id: "{id}"
+MakeGesture:
+  agent_id: "{id}"
+  message: string
+RegularNav:
+  agent_id: "{id}"
+  time_step: "{dt}"
+RunAwayFromRobot:
+  agent_id: "{id}"
+  time_step: "{dt}"
+# Conditions
+HumanSays:
+  agent_id: "{id}"
+  message: string
+  target_id: int
+IsGoalReached:
+  agent_id: "{id}"
+IsRobotBlocking:
+  agent_id: "{id}"
+  distance: float
+IsRobotNearby:
+  agent_id: "{id}"
+  distance: float
+IsRobotVisible:
+  agent_id: "{id}"
+  distance: float
+RobotMoved:
+  agent_id: "{id}"
+RobotSays:
+  agent_id: "{id}"
+  message: string
+#BehaviorTree:
+#  ID: string
+# For RegularNav
+# SetBlackboard:
+#   output_key: string
+#   value: string
+# SubTree:
+#   ID: string
+# UpdateGoal:
+#   agent_id: "{id}"
+# include:
+#   path: "BTRegularNav.xml"
+# root:
+#   main_tree_to_execute: string

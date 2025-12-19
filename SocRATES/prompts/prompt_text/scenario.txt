@@ -1,0 +1,98 @@
+
+Q: Scenario Description: Robot is transporting a box from one point to another in the warehouse. Along the way, it encounters an employee walking in the opposite direction and another employee walking in the same direction as the robot in a passageway. The first human runs away from the robot upon spotting the robot at about 5m away and the second human follows the robot when it is nearby.
+[Node Types]: ['Simple Node', 'Intersection']
+[Edge Types]: ['Passageway','Simple Edge','Narrow Passageway']
+A: Scenario Description: 
+    {
+    'robot': 'Transporting box from one point in the warehouse to another, meets human 1 and human 2 in a long passageway.'
+    'humans': [{
+        'name': 'human 1',
+        'trajectory': 'Encounters the robot in a long passageway walking in opposite direction to the robot',
+        'behavior': 'When the robot is visible to the human within 5m, human get's scared and runs away'
+    },{
+        'name': 'human 2',
+        'trajectory': 'Encounters the robot in a long passageway walking in same direction to the robot'
+        'behavior': 'When the robot is nearby (2m away), the human follows the robot'
+    }]
+    'groups': None
+    }
+*****
+
+Q: Scenario Description: While going to its goal, the robot reaches an intersection on the way where two warehouse employees in a group are standing and talking. Human 1 bullies the robot when he sees it while Human 2 stops moving if the robot blocks him and waits for it to pass.
+[Node Types]: ['Simple Node', 'Blind Corner','Intersection','Open Area']
+[Edge Types]: ['Simple Edges','Wide Passageway']
+
+A: Scenario Description:
+    {
+    'robot': 'Navigating to its goal, encounters Human 1 and Human 2 at an intersection.'
+    'humans': [{
+        'name': 'human 1',
+        'trajectory': 'Encounters the robot at an intersection while in a group with Human 2',
+        'behavior': 'When the robot is visible, human blocks the robot\'s path (bullies the robot)'
+    },{
+        'name': 'human 2',
+        'trajectory': 'Encounters the robot at an intersection while in a group with Human 1'
+        'behavior': 'When the robot is blocking the human\'s path, human stops moving (does nothing) and waits for the robot to pass'
+    }],
+    'groups': [('human 1','human 2')]
+    }
+
+    
+
+*****
+
+Q: Scenario Description: The robot is guiding a new employee to the exit through a passageway and comes across 3 other employees at a blind corner. Two of them are walking together and talking to each other in a group while the third is just following one of them. The humans do not pay attention to the robot and just continue walking to their destinations.
+[Node Types]: ['Blind Corner','Intersection','Entrance/Exit']
+[Edge Types]: ['Passageway','Doorway']
+
+A: Scenario Description:
+    {
+    'robot': 'Guiding Human 1 to an exit through a passageway. Encounters Human 2, Human 3, Human 4 at a blind corner.'
+    'humans': [{
+        'name': 'human 1',
+        'trajectory': 'Follows robot through passageway and blind corner to the exit',
+        'group membership': None
+        'behavior': 'Follows the robot to the exit'
+    },{
+        'name': 'human 2',
+        'trajectory': 'Encounters robot at a blind corner while walking with Human 3',
+        'group membership': 'human 3'
+        'behavior': 'Does not pay attention to robot and continues navigating to goal'
+    },{
+        'name': 'human 3',
+        'trajectory': 'Encounters robot at a blind corner while walking with Human 2'
+        'group membership': 'human 2'
+        'behavior': 'Does not pay attention to robot and continues navigating to goal'
+    },{
+        'name': 'human 4',
+        'trajectory': 'Encounters robot at a blind corner while following Human 2'
+        'group membership': None
+        'behavior': 'Follows Human 2 and does not pay attention to robot, continues navigating to goal'
+    }],
+    'groups':[('human 2','human 3')]
+    }
+
+*****
+
+Q: Scenario Description: The robot moves through an Intersection, Passageway and finally to its goal which is the Exit, and interacts with 3 humans on the way. Human 1 encounters the robot at a SIMPLE NODE and is curious about the robot, Human 2 interacts at an Intersection and tries to follow the robot while Human 3; at a blind corner who freezes when the robot is nearby.
+[Node Types]: ['Simple Node', 'Blind Corner','Intersection','Open Area','Entrance/Exit']
+[Edge Types]: ['Simple Edges','Doorway','Passageway']
+
+A: Scenario Description:
+    {
+    'robot': 'Moves through an Intersection, Passageway and finally to its goal which is the Exit. Encounters Human 1 at a Simple Node, Human 2 at an intersection, and Human 3 at a blind corner.'
+    'humans': [{
+        'name': 'human 1',
+        'trajectory': 'Encounters the robot at a Simple Node',
+        'behavior': 'When the robot is visible, human looks at the robot (is curious about the robot)'
+    },{
+        'name': 'human 2',
+        'trajectory': 'Encounters the robot at an intersection'
+        'behavior': 'When the robot is nearby, human follows the robot'
+    },{
+        'name': 'human 3',
+        'trajectory': 'Encounters the robot at a blind corner'
+        'behavior': 'When the robot is nearby, human stops moving (freezes) by doing nothing'
+    }],
+    'groups': None
+    }

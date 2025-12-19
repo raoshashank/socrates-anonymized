@@ -1,0 +1,42 @@
+node_library:
+  root: ['main_tree_to_execute']
+  BehaviorTree: ['ID']
+  include: ['path']
+  SetBlackboard: ['output_key', 'value']
+  Sequence: ['name']
+  Fallback: ['name']
+  SubTree: ['ID']
+  Inverter: []
+  IsRobotVisible: ['agent_id', 'distance']
+  IsRobotNearby: ['agent_id', 'distance']
+  IsGoalReached: ['agent_id']
+  TimeExpiredCondition: ['seconds', 'ts', 'only_once']
+  RobotSays: ['agent_id', 'message']
+  HumanSays: ['agent_id','target_id','message']
+  RobotMoved: ['agent_id']
+  IsRobotBlocking: ['agent_id', 'distance']
+  UpdateGoal: ['agent_id']
+  MakeGesture: ['agent_id', 'message']
+  RegularNav: ['agent_id', 'time_step']
+  LookAtRobot: ['agent_id']
+  FollowRobot: ['agent_id', 'time_step']
+  FollowHuman: ['agent_id','target_id','time_step']
+  RunAwayFromRobot: ['agent_id', 'time_step']
+  GiveWaytoRobot: ['agent_id', 'time_step']
+  BlockRobot: ['agent_id', 'time_step']
+
+argument_types:
+  agent_id: 'int'
+  target_id: 'int'
+  distance: 'float'
+  seconds: 'float'
+  ts: '{dt}'
+  only_once: 'bool'
+  message: 'string'
+  time_step: 'float'
+  output_key: 'string'
+  value: 'string'
+  name: 'string'
+  ID: 'string'
+  main_tree_to_execute: 'string'
+  path: 'string'

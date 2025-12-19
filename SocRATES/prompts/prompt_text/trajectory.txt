@@ -1,0 +1,198 @@
+Q: Parse the following scenrio description:
+    robot: Transporting box from one point in the warehouse to another, meets human 1 and human 2 in a long passageway. 
+    human 1: Encounters the robot in a long passageway walking in opposite direction to the robot
+    human 2: Encounters the robot in a long passageway walking in same direction to the robot
+    groups: None
+A: {
+    'reasoning':""
+        1. Scenario Trajectory constraints: There are 2 humans in the scenario. Human 1 encounters the robot in a long passageway. Human 2 also encounters the robot in a long passageway. Edges of type passageway from the scene graph are: 1a-ca, ca-c4,c4-f7,f7-f2,81-0a, 0a-c0.
+        
+        2. Interaction Locations: Edges of type passageway from the scene graph are: 1a-ca, ca-c4,c4-f7,f7-f2,81-0a, 0a-c0. Human 1 and Human 2 can have interactions in any of these edge locations.
+
+        3. Group IDs: Since the 2 employees in the scenario are not part of any single group, they both have group_ids of -1 (default, no group).
+        
+        4. Robot Trajectory: 
+            - First interaction: human1 at ca 
+            - Second interaction: human2 at c4
+            - Thus, a plausible robot's trajectory: 1a,ca,c4,f7,f2,df
+        
+        5. Human Trajectories: 
+            - Human 1 and Human 2 are not in a group so their trajectories can be designed independently.
+            - Human 1 is moving in opposite direction of the robot and Human 2 is moving in same direction as the robot.
+            - Human 1: 
+                - The robot is moving from 1a towards ca. so opposite direction to that is c4 towards ca
+                - Trajectory: c4 -> ca -> 1a
+            - Human 2:
+                - The robot is moving from 1a towards c4 and human needs to move in same direction as robot
+                - To make it more likely for the human to interact with the robot, place the human about the same distance away from the interaction point (c4) as the robot (2 nodes from the start of the trajectory).
+                - Trajectory: 3a-> ca -> c4 -> f7 -> f2"""
+
+
+    'trajectories': {
+        'robot': ['1a','ca','c4','f7','f2','df'],
+        'humans':[
+            {
+                'name':'human 1',
+                'groupid': -1,
+                'trajectory': ['c4','ca','1a'],
+                'interaction_point':'ca'
+            },
+            {
+                'name':'human 2',
+                'groupid': -1,
+                'trajectory': ['3a','ca','c4','f7','f2'],
+                'interaction_point':'c4'
+            }
+        ] 
+    }
+}
+
+*****
+Q: Parse the following scenrio description:
+    robot: Meets Human 1 and Human 2 at an intersection
+    Human 1: Encounters the robot at an intersection while in a group with Human 2
+    Human 2: Encounters the robot at an intersection while in a group with Human 1
+    groups: (Human 1, Human 2)
+    
+A: {
+'reasoning':""
+    1. Scenario Trajectory constraints: There are 2 humans in this scenario and they both encounter the robot at an intersection. Intersections are Node 67 and Node ca
+    2. Interaction Locations: Human 1 and Human 2 can interact with the robot at the intersection 67.
+    3. Group IDs: The 2 employees form a group according to the input therefore they both have group ID = 1
+    4. Robot Trajectory:
+        - Interaction Locations: 67 for both humans
+        - One Possible Sequence for robot's trajectory: 0a->c0->67->ad->2b
+    5. Human Trajectories
+        - Human 1 and Human 2 are part of a group so they must have identical trajectories
+        - human 1 and human 2 both are stationary and talking to each other at an intersection
+        - Thus they can have trajectories: 67 (stationary)"",
+
+'trajectories': {
+        'robot':  ['0a','c0','67','ad','2b'],
+        'humans':[
+            {
+                'name':'human 1',
+                'groupid': 1,
+                'trajectory': ['67'],
+                'interaction_point':'67'
+            },
+            {
+                'name':'human 2',
+                'groupid': 1,
+                'trajectory': ['67'],
+                'interaction_point':'67'
+            }
+        ] 
+    }
+    }
+*****
+Q: Parse the following scenrio description:
+    robot: Guiding an employee to an exit through a passageway. Interacts with Human 2, Human 3, Human 4 at a blind corner
+    Human 1: Follows Robot through the passageway and blind corner to an exit
+    Human 2: Interacts with robot at a blind corner, walking together with Human 3
+    Human 3: Interacts with robot at a blind corner, walking together with Human 2
+    Human 4: Interacts with robot at a blind corner, following Human 2
+    groups: (Human 2, Human 3)
+        
+A: {
+'reasoning':""
+    1. Scenario Trajectory constraints: There are 4 humans in this scenario. Human 1 is following the robot and both need to end up at an Exit node (Node 19 and df are Entrance/Exit from scene graph). They need to go through a passageway on the way (Edges 1a-ca, ca-c4,c4-f7,f7-f2,81-0a, 0a-c0 from the scene graph). Human 2, Human 3 and Human 4 encounter the robot at the same blind corner (Node f2 and 81 are blind corner nodes from scene graph)
+    2. Interaction Locations: Human 1 and robot can start from the same location and they're trying to reach the Entrance/Exit node df through the passageways ca-c4,c4-f7,f7-f2. They meet Human 2, Human 3 and Human 4 at the blind corner f2.
+    3. Group IDs: Human 1 and Human 4 are not in a group so group_id = -1, Human 2 and Human 3 are in a group so group_id = 1 for both of them
+    4. Robot Trajectory: 
+        - Robot starts at ca with Human 1 following it. It goes through the passageway ca-c4,c4-f7,f7-f2 and meets Human 2,3,4 at f2 then goes beyond them to the exit df.
+        - Thus, robot's trajectory: ca -> c4 -> f7 -> f2 -> df
+
+    5. Human Trajectories:
+        - Human 1 is following robot, thus Human 1's trajectory = ca -> c4 -> f7 -> f2 -> df
+        - Human 2 and Human 3 are in a group thus they have identical trajectories. They move in opposite direction of the robot (to maxmimize likelihood of interaction) and meet the robot at the blind corner f2. Thus trajectories for both human 2 and human 3: df -> f2 -> f7 -> c4
+        - Human 4 is not a part of the group but is following Human 2 or 3 so same trajectory as them: df -> f2 -> f7 -> c4
+        "",
+
+'trajectories': {
+        'robot':  ['ca','c4','f7','f2','df'],
+        'humans':[
+            {
+                'name':'human 1',
+                'groupid': -1,
+                'trajectory': ['ca','c4','f7','f2','df'],
+                'interaction_point':'ca'
+            },
+            {
+                'name':'human 2',
+                'groupid': 1,
+                'trajectory': ['df','f2','f7','c4'],
+                'interaction_point':'f2'
+            },
+            {
+                'name':'human 3',
+                'groupid': 1,
+                'trajectory': ['df','f2','f7','c4'],
+                'interaction_point':'f2'
+            },
+            {
+                'name':'human 4',
+                'groupid': -1,
+                'trajectory': ['df','f2','f7','c4'],
+                'interaction_point':'f2'
+            }
+
+        ] 
+    }
+    }
+
+*****
+Q: Parse the following scenrio description:
+    robot: Moves through an Intersection, Passageway and finally to its goal which is the Exit. Interacts with Human 1 at Simple Node, Human 2 at an intersection and Human 3 at a blind corner.
+    Human 1: Interacts with robot at a Simple Node
+    Human 2: Interacts with Robot at an intersection
+    Human 3: Interacts with Robot at a blind corner
+    groups: None
+        
+A: {
+'reasoning':""
+    1. Scenario Trajectory constraints: The robot moves through an intersection (node 67, node ca from scene graph), passageway (edges 1a-ca, ca-c4,c4-f7,f7-f2,81-0a, 0a-c0 from the scene graph) and finally reaches an Entrance/Exit (node 19, node df from the scene graph). Human 1 interacts with robot at Simple Node (nodes 03, 0a, c0, ad, 2b, c4, f7, 1a, a6 from the scene graph), Human 2 at intersection (node 67, node ca from scene graph) and Human 3 at a blind corner (Node f2 and 81 from scene graph).
+    2. Interaction Locations: 
+        - Since Human 1 has many options, Human 2 and Human 3's interaction points will be chosen first. 
+        - Human 2 can interact at intersection node 67
+        - Robot can interact at this intersection first, then interact with human 1 at a simple node and then human 3 at a blind corner then reach the entrance/exit
+        - Human 3 can interact with the robot at the blind corner 81
+        - Human 1 can interact with robot at the simple node 0a on the way to the blind corner 81
+    3. Group IDs: None of the humans are in a group so group_id = -1 for all humans.
+    4. Robot Trajectory: 
+        - Based on the interaction locations, robot can start from any node (say node 2b) before arriving at intersection 67 to interact with Human 1
+        - After node 67, robot interacts with Human 1 at simple node 0a after going through passageway 67-c0
+        - Then the robot interacts with Human 3 at blind corner node 81. 
+        - Finally the robot ends up at the exit node 19. 
+        - Thus, robot's trajectory: 2b -> ad -> 67 -> c0 -> 0a -> 81 -> 03 -> 19
+    5. Human Trajectories
+        - Human 1 encounters robot at node 0a, moving opposite to the robot (to maximize the human encountering the robot), thus human 1 trajectory: 81->0a->c0->67
+        - Human 2 encounters robot at node 67, moving orthogonal to the robot (to maximize the human encountering the robot), thus human 2 trajectory: a6 -> 67 -> 86 -> ca
+        - Human 3 encounters robot at node 81, moving opposite to the robot (to maximize the human encountering the robot), thus human 3 trajectory: 19 -> 03 -> 81 -> 0a -> c0 
+        
+        "",
+
+'trajectories': {
+        'robot':  ['2b', 'ad', '67', 'c0', '0a', '81', '03', '19'],
+        'humans':[
+            {
+                'name':'human 1',
+                'groupid': -1,
+                'trajectory': ['81','0a','c0','67'],
+                'interaction_point':'0a'
+            },
+            {
+                'name':'human 2',
+                'groupid': -1,
+                'trajectory': ['a6', '67', '86', 'ca'],
+                'interaction_point':'67'
+            },
+            {
+                'name':'human 3',
+                'groupid': -1,
+                'trajectory': ['19','03','81','0a','c0'],
+                'interaction_point':'81'
+            }
+        ] 
+    }
+    }

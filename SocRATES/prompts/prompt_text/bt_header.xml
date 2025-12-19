@@ -1,0 +1,50 @@
+    <TreeNodesModel>
+        <Action ID="RegularNav">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+            <input_port name="time_step" type="double">time step in seconds to compute movement</input_port>
+        </Action>
+        <Action ID="UpdateGoal">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="MakeGesture">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="LookAtRobot">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="FollowRobot">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="AvoidRobot">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="GiveWayToRobot">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+        <Action ID="BlockRobot">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Action>
+
+
+        <Condition ID="IsGoalReached">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="RobotSays">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="RobotVisible">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="RobotNearby">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="RobotBlocking">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="GoalReached">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+        <Condition ID="RobotMoved">
+            <input_port name="agent_id" type="int">identifier of the agent</input_port>
+        </Condition>
+    </TreeNodesModel>

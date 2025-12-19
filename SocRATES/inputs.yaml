@@ -1,0 +1,23 @@
+experiment_name: test
+colcon_ws_directory: '' # UPDATE THIS PATH TO YOUR COLCON WORKSPACE DIRECTORY
+paths: #can be left as-is 
+  save_dir: ''
+  hunav_gazebo_wrapper_dir: '../hunav_gazebo_wrapper'
+  hunav_sim_dir: '../hunav_sim'
+
+location: #update this to your location and add a description in location_descriptions.yaml of your new location
+  name: 'hospital'
+  scene_graph_file:       annotator/locations/hospital/scene_graph.json
+  annotated_map_img_file: annotator/locations/hospital/scene_graph.png
+  map_params_file:       annotator/locations/hospital/map.yaml
+  
+
+# Scenario Generation inputs
+context: "A group of 3 employees are standing at an intersection talking to each other. The robot needs to pass the intersection to reach its goal. None of them give way to the robot unless the robot says something to them. When the robot speaks, one of the employees however gets startled and keeps looking at the robot until its not visible"
+
+load_scenario_response: false
+load_trajectory_response: false
+load_bt_response: false
+
+
+

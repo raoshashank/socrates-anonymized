@@ -1,0 +1,248 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                348,
+                438
+            ],
+            "id": "ec"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                448,
+                436
+            ],
+            "id": "a3"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                313,
+                432
+            ],
+            "id": "09"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                478,
+                428
+            ],
+            "id": "eb"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                314,
+                482
+            ],
+            "id": "94"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                479,
+                481
+            ],
+            "id": "6a"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                350,
+                488
+            ],
+            "id": "47"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                445,
+                485
+            ],
+            "id": "bf"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                348,
+                544
+            ],
+            "id": "0c"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                447,
+                543
+            ],
+            "id": "c3"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                347,
+                644
+            ],
+            "id": "9c"
+        },
+        {
+            "type": "BLIND CORNER",
+            "pos": [
+                448,
+                640
+            ],
+            "id": "63"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                345,
+                733
+            ],
+            "id": "5c"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                316,
+                619
+            ],
+            "id": "69"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                314,
+                663
+            ],
+            "id": "1b"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                481,
+                620
+            ],
+            "id": "ac"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                481,
+                573
+            ],
+            "id": "66"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                449,
+                676
+            ],
+            "id": "fc"
+        }
+    ],
+    "links": [
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "ec",
+            "target": "47"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "a3",
+            "target": "bf"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "09",
+            "target": "94"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "eb",
+            "target": "6a"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "94",
+            "target": "47"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "6a",
+            "target": "bf"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "47",
+            "target": "bf"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "47",
+            "target": "0c"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "bf",
+            "target": "c3"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "0c",
+            "target": "c3"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "0c",
+            "target": "9c"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "c3",
+            "target": "63"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "9c",
+            "target": "63"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "9c",
+            "target": "69"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "9c",
+            "target": "1b"
+        },
+        {
+            "type": "WIDE PASSAGEWAY",
+            "source": "9c",
+            "target": "5c"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "63",
+            "target": "ac"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "63",
+            "target": "fc"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "ac",
+            "target": "66"
+        }
+    ]
+}

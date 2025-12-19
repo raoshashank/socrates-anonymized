@@ -1,0 +1,10 @@
+img: locations/hospital/map.pgm
+out: locations/hospital/scene_graph.png
+scg: locations/hospital/scene_graph.json
+node_types: ['INTERSECTION', 'OPEN AREA', 'PASSAGEWAY END', 'INSIDE ROOM', 'SIMPLE NODE', 'BLIND CORNER']
+edge_types: ['DOORWAY', 'NARROW PASSAGEWAY', 'SIMPLE EDGE', 'WIDE PASSAGEWAY']
+
+# change to improve readability of the graph
+zoom_in: 1.0
+zoom_out: 1.0
+font_size: 3

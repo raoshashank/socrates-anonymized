@@ -1,0 +1,251 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                324,
+                661
+            ],
+            "id": "63"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                369,
+                682
+            ],
+            "id": "6d"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                460,
+                689
+            ],
+            "id": "a7"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                530,
+                687
+            ],
+            "id": "7d"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                597,
+                691
+            ],
+            "id": "39"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                625,
+                695
+            ],
+            "id": "cf"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                695,
+                695
+            ],
+            "id": "5d"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                764,
+                672
+            ],
+            "id": "d7"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                619,
+                761
+            ],
+            "id": "d0"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                615,
+                848
+            ],
+            "id": "b0"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                613,
+                945
+            ],
+            "id": "34"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                557,
+                757
+            ],
+            "id": "15"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                547,
+                797
+            ],
+            "id": "f5"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                584,
+                798
+            ],
+            "id": "d4"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                595,
+                640
+            ],
+            "id": "b3"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                498,
+                630
+            ],
+            "id": "1d"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                523,
+                729
+            ],
+            "id": "1f"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                534,
+                830
+            ],
+            "id": "81"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                546,
+                896
+            ],
+            "id": "86"
+        }
+    ],
+    "links": [
+        {
+            "type": "SIMPLE EDGE",
+            "source": "63",
+            "target": "6d"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "6d",
+            "target": "a7"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "a7",
+            "target": "7d"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "7d",
+            "target": "1d"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "7d",
+            "target": "1f"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "7d",
+            "target": "39"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "39",
+            "target": "cf"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "cf",
+            "target": "b3"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "cf",
+            "target": "5d"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "cf",
+            "target": "d0"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "5d",
+            "target": "d7"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "d0",
+            "target": "15"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "d0",
+            "target": "b0"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "b0",
+            "target": "81"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "b0",
+            "target": "86"
+        },
+        {
+            "type": "NARROW PASSAGEWAY",
+            "source": "b0",
+            "target": "34"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "15",
+            "target": "f5"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "15",
+            "target": "d4"
+        }
+    ]
+}

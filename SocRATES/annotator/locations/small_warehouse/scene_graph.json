@@ -1,0 +1,248 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "BLIND CORNER",
+            "pos": [
+                88,
+                31
+            ],
+            "id": "ef"
+        },
+        {
+            "type": "PASSAGEWAY_END",
+            "pos": [
+                62,
+                29
+            ],
+            "id": "76"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                88,
+                59
+            ],
+            "id": "e6"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                88,
+                86
+            ],
+            "id": "29"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                87,
+                112
+            ],
+            "id": "51"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                89,
+                136
+            ],
+            "id": "b3"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                113,
+                134
+            ],
+            "id": "ff"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                135,
+                132
+            ],
+            "id": "2f"
+        },
+        {
+            "type": "PASSAGEWAY_END",
+            "pos": [
+                172,
+                126
+            ],
+            "id": "cf"
+        },
+        {
+            "type": "BLIND CORNER",
+            "pos": [
+                134,
+                101
+            ],
+            "id": "49"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                169,
+                103
+            ],
+            "id": "3e"
+        },
+        {
+            "type": "PASSAGEWAY_END",
+            "pos": [
+                190,
+                102
+            ],
+            "id": "35"
+        },
+        {
+            "type": "PASSAGEWAY_END",
+            "pos": [
+                191,
+                127
+            ],
+            "id": "32"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                112,
+                161
+            ],
+            "id": "6c"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                136,
+                157
+            ],
+            "id": "bf"
+        },
+        {
+            "type": "OPEN AREA",
+            "pos": [
+                89,
+                161
+            ],
+            "id": "d1"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                86,
+                188
+            ],
+            "id": "df"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                90,
+                214
+            ],
+            "id": "23"
+        }
+    ],
+    "links": [
+        {
+            "type": "SIMPLE EDGE",
+            "source": "ef",
+            "target": "76"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "ef",
+            "target": "e6"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "e6",
+            "target": "29"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "29",
+            "target": "51"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "51",
+            "target": "b3"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "b3",
+            "target": "d1"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "b3",
+            "target": "ff"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "ff",
+            "target": "6c"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "ff",
+            "target": "2f"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "2f",
+            "target": "bf"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "2f",
+            "target": "49"
+        },
+        {
+            "type": "NARROW AISLE",
+            "source": "2f",
+            "target": "cf"
+        },
+        {
+            "type": "NARROW AISLE",
+            "source": "cf",
+            "target": "32"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "49",
+            "target": "3e"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "3e",
+            "target": "35"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "6c",
+            "target": "d1"
+        },
+        {
+            "type": "SIMPLE EDGE",
+            "source": "6c",
+            "target": "bf"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "d1",
+            "target": "df"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "df",
+            "target": "23"
+        }
+    ]
+}

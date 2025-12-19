@@ -1,0 +1,1 @@
+A multifloor hospital connected by 2 elevators. The hospital also has open areas where patients and doctors can be found walking around.

@@ -1,0 +1,21 @@
+arena_nus_com1_building: 
+  name: arena_nus_com1_building
+  description: "An office with narrow passageway connecting various locations like intersections and rooms. There are rooms with doorways leading into passageways and open areas as well."
+  scene_graph_file:       annotator/locations/arena_nus_com1_building/scene_graph.json
+  annotated_map_img_file: annotator/locations/arena_nus_com1_building/scene_graph.png
+  map_params_file:       annotator/locations/arena_nus_com1_building/map.yaml
+
+small_warehouse: 
+  name: small_warehouse
+  description: "Small Warehouse that consists of various racks and packaging areas. The warehouse consists of passageways, intersections, narrow aisles, corners, open areas."
+  scene_graph_file:       annotator/locations/small_warehouse/scene_graph.json
+  annotated_map_img_file: annotator/locations/small_warehouse/scene_graph.png
+  map_params_file:       annotator/locations/small_warehouse/map.yaml
+
+hospital: 
+  name: hospital
+  description: "A Large hospital with long passageways, both narrow and wide with intersections, rooms with doorways and blind corners."
+  scene_graph_file:       annotator/locations/hospital/scene_graph.json
+  annotated_map_img_file: annotator/locations/hospital/scene_graph.png
+  map_params_file:       annotator/locations/hospital/map.yaml
+

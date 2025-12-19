@@ -1,0 +1,91 @@
+hunav_sim:
+  agents_file: 'hunav_agent_manager/config/custom_agents.yaml'
+  bt_dir: 'hunav_agent_manager/behavior_trees'
+  cpp_dir: 'hunav_agent_manager/src'
+  hpp_dir: 'hunav_agent_manager/include/hunav_agent_manager'
+
+seed: 1
+scenario_model:
+ model_type: "gpt"  # "gemini-1.0-pro-vision"re
+ model_name: "gpt-4.1" #"gpt-4o-2024-08-06" #"gpt-5"
+ #temperature: 0.5
+
+trajectory_model:
+ model_type: "gpt"  # "gemini-1.0-pro-vision"
+ model_name: "gpt-4.1" #"gpt-4o-202
+ #temperature: 0.5
+
+bt_model:
+  model_type: "gpt"  # "gemini-1.0-pro-vision"
+  model_name: "gpt-4.1" #"gpt-5" #"gpt-4o-2024-08-06" #"gpt-5"
+  #temperature: 0.5
+
+num_scenario_proposals: 5
+
+retry_count: 3
+debug: true
+
+node_library:
+  Fallback:
+    name: string
+  Sequence:
+    name: string
+  Inverter: {}
+  TimeExpiredCondition:
+    only_once: bool
+    seconds: float
+    ts: "{dt}"
+ 
+  # Actions
+  BlockRobot:
+    agent_id: "{id}"
+    time_step: "{dt}"
+  FollowHuman:
+    agent_id: "{id}"
+    target_id: int
+    time_step: "{dt}"
+  FollowRobot:
+    agent_id: "{id}"
+    time_step: "{dt}"
+  GiveWaytoRobot:
+    agent_id: "{id}"
+    time_step: "{dt}"
+  LookAtRobot:
+    agent_id: "{id}"
+  MakeGesture:
+    agent_id: "{id}"
+    message: string
+  RegularNav:
+    agent_id: "{id}"
+    time_step: "{dt}"
+  RunAwayFromRobot:
+    agent_id: "{id}"
+    time_step: "{dt}"
+ 
+  # Conditions
+  HumanSays:
+    agent_id: "{id}"
+    message: string
+    target_id: int
+  IsGoalReached:
+    agent_id: "{id}"
+  IsRobotBlocking:
+    agent_id: "{id}"
+    distance: float
+  IsRobotNearby:
+    agent_id: "{id}"
+    distance: float
+  IsRobotVisible:
+    agent_id: "{id}"
+    distance: float
+  RobotMoved:
+    agent_id: "{id}"
+  RobotSays:
+    agent_id: "{id}"
+    message: string
+
+scenario_file: 'responses/scenario.json'
+trajectory_file: 'responses/trajectory.json'
+bt_file: 'responses/bt.json'
+user_feedback: False
+use_handcrafted_scenario: false

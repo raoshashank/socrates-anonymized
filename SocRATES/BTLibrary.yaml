@@ -1,0 +1,84 @@
+#Visible: Condition to use: If the robot is visible within 5m ....
+NoAction: Human continues walking normally, ignoring the Robot
+ForeverFollow: If robot is visible within 5m, human follows the Robot
+TimedFollow: If robot is visible within 5m, human follows the Robot for 10 seconds
+Followcommunicative: If robot is visible within 5m, human follows the Robot for 10 seconds while gesturing to it saying 'EXCUSE ME'
+Looker: If robot is visible within 5m, human looks at the Robot
+TimedLooker: If robot is visible within 5m, human looks at the Robot for 10 seconds
+LookAtFollow: If robot is visible within 5m, human looks at the Robot for 5 seconds, then follows the robot
+LookAtTimedFollow: If robot is visible within 5m, human looks at the Robot for 5 seconds, then follows the robot for 10 seconds
+Blocker: If robot is visible within 5m, human blocks the Robot's path
+TimedBlocker: If robot is visible within 5m, human blocks the Robot's path for 10 seconds
+FollowBlocker: If robot is visible within 5m, human looks at the Robot for 5 seconds, then blocks the Robot for 10 seconds
+WayGiver: If robot is visible within 5m, human gives way to the Robot
+WayGiverCommunicative: If robot is visible within 5m, human gives way to the Robot while saying 'PROCEED'
+BlockWayGiver: If robot is visible within 5m, human blocks the Robot's path for 10 seconds, then gives way to the Robot
+Dontwait: If robot is visible within 5m, human gestures to the Robot 'WAIT' and continues walking
+ScaredyCat: If the robot is visible within 5m, human gets scared of the Robot and runs away from it
+ScaredyCatTimed: If the robot is visible within 5m, human gets scared of the Robot and runs away from it for 8 seconds
+ScaredyCatCommunicative: If the robot is visible within 5m, human gets scared of the Robot and runs away from it for 8 seconds while saying 'EXCUSE ME'
+LookAtScaredyCat: If the robot is visible within 5m, human looks at the Robot for 5 seconds, then gets scared of the Robot and runs away from it for 8 seconds
+LookAtScaredyCatCommunicative: If the robot is visible within 5m, human looks at the Robot for 5 seconds, then gets scared of the Robot and runs away from it for 8 seconds while saying 'EXCUSE ME'
+
+# Blocking: Condition to use: If the robot blocks the human ....
+WaitForRobot: If robot blocks the human, human stops and waits for 5 seconds
+WaitThenGoAround: If robot blocks the human, human stops and waits for 5 seconds, then gives way for the robot
+PoliteWaitThenGoAround: If robot blocks the human, human waits for 5 seconds, then says 'EXCUSE ME' then gives way to the robot
+AskToMove: If robot blocks the human, human stops and gestures to the robot saying 'EXCUSE ME'
+AskToMoveThenGoAround: If robot blocks the human, human stops and gestures to the robot saying 'EXCUSE ME' for 3 seconds, then gives way for the robot
+GiveWay: If robot blocks the human, human gives way to the robot
+PoliteGiveWay: If robot blocks the human, human says 'PROCEED', and gives way to the robot
+BlockLook: If robot blocks the human, human looks at the Robot
+BlockLookThenFollow: If robot blocks the human, human looks at the Robot for 5 seconds, then follows the robot
+BlockLookThenGiveWay: If robot blocks the human, human looks at the Robot for 5 seconds, then gives way to the robot
+BlockScaredyCat: If robot blocks the human, human gets scared of the Robot and runs away from it
+
+# Moving + Visible
+Chicken: If the robot is visible within 5m and moving, human stays still for 5 seconds
+ChickenFollow: If the robot is visible within 5m and moving, human stays still for 5 seconds, then follows the robot for 10 seconds
+MovingLooker: If the robot is visible within 5m and moving, human looks at the Robot
+MovingTimedLooker: If the robot is visible within 5m and moving, human looks at the Robot for 10 seconds
+MovingLookAtFollow: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then follows the robot
+MovingLookAtTimedFollow: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then follows the robot for 10 seconds
+MovingFollower: If the robot is visible within 5m and moving, human follows the Robot
+MovingTimedFollower: If the robot is visible within 5m and moving, human follows the Robot for 10 seconds
+MovingFollowerCommunicative: If the robot is visible within 5m and moving, human follows the Robot for 10 seconds while gesturing to it saying 'EXCUSE ME'
+MovingWayGiver: If the robot is visible within 5m and moving, human gives way to the Robot
+MovingWayGiverCommunicative: If the robot is visible within 5m and moving, human gives way to the Robot while saying 'PROCEED'
+MovingLookAtGiveWay: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then gives way to the Robot
+MovingBlocker: If the robot is visible within 5m and moving, human blocks the Robot's path
+MovingTimedBlocker: If the robot is visible within 5m and moving, human blocks the Robot's path for 10 seconds
+MovingLookAtBlocker: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then blocks the Robot for 10 seconds
+MovingScaredyCat: If the robot is visible within 5m and moving, human gets scared of the Robot and runs away from it
+MovingScaredyCatTimed: If the robot is visible within 5m and moving, human gets scared of the Robot and runs away from it for 8 seconds
+MovingScaredyCatCommunicative: If the robot is visible within 5m and moving, human gets scared of the Robot and runs away from it for 10 seconds while saying 'EXCUSE ME'
+MovingLookAtScaredyCat: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then gets scared of the Robot and runs away from it for 10 seconds
+MovingLookAtScaredyCatCommunicative: If the robot is visible within 5m and moving, human looks at the Robot for 5 seconds, then gets scared of the Robot and runs away from it for 10 seconds while saying 'EXCUSE ME'
+
+# Blocking + Visible
+PoliteEarlySpot: If robot is visible within 5m, human gestures 'EXCUSE ME' for 3 seconds, if robot then blocks the human, human waits for the robot to stop blocking before continuing
+PoliteEarlySpotTimed: If robot is visible within 5m, human gestures 'EXCUSE ME' for 3 seconds, if robot then blocks the human, human waits for the robot for upto 10 seconds to stop blocking them before continuing
+EarlySpotDetour: If robot is visible within 5m, human looks at the Robot for 3 seconds, if robot then blocks the human, human gives way to the robot
+EarlySpotScaredyCat: If robot is visible within 5m, human looks at the Robot, if robot then blocks the human, human gets scared and runs away
+EarlySpotGiveWay: If robot is visible within 5m, human looks at the Robot for 3 seconds, if robot then blocks the human, human gives way to the robot
+PoliteEarlySpotGiveWay: If robot is visible within 5m, human looks at the Robot for 3 seconds and Gestures 'EXCUSE ME', if robot then blocks the human, human gives way to the robot
+EarlySpotScaredyCat: If robot is visible within 5m, human looks at the Robot for 3 seconds, if robot then blocks the human, human gets scared and runs away
+PoliteEarlySpotScaredyCat: If robot is visible within 5m, human looks at the Robot for 3 seconds and Gestures 'EXCUSE ME', if robot then blocks the human, human gets scared and runs away
+
+# Blocking + Moving
+WaitForClearance: If robot is blocking the human, human waits, if robot then moves, human continues after robot clears the path
+FollowMovingBlocker: If robot is blocking the human, human waits, if robot then moves, human follows the robot for 10 seconds
+PoliteWaitForClearance: If robot is blocking the human, human gestures 'EXCUSE ME' for 3 seconds, if robot then moves, human waits for path to clear before continuing
+OpportunisticPass: If robot is blocking the human and moving, human waits for 2 seconds for the robot to stop blocking, then gives way
+TrackAndWait: If robot is blocking the human and moving, human looks at the Robot and waits until path clears
+AdaptiveGiveWay: If robot is blocking the human and moving, human gives way to let the robot pass
+ScaredOfMovingBlocker: If robot is blocking the human and moving, human gets scared and runs away
+
+# Moving + Blocking + Visible
+DefensiveFreeze: If robot is visible within 5m, moving, and blocking, human stops immediately and waits until robot fully clears before continuing
+FullAwarenessPause: If robot is visible within 5m, human looks at the Robot for 3 seconds, if robot is moving and blocking, human stops and waits for the robot to stop blocking
+FullAwarenessTimedPause: If robot is visible within 5m, human looks at the Robot for 3 seconds, if robot is moving and blocking, human stops and waits for the robot to stop blocking for upto 5 seconds
+AnticipateAndNavigate: If robot is visible within 5m and moving, human observes the Robot, if robot then blocks, human gives way to the robot
+AnticipateAndNavigate: If robot is visible within 5m and moving, human observes the Robot, if robot then blocks, human gets scared and runs away
+CautiousMonitor: If robot is visible within 5m, moving, and blocking, human looks at the Robot continuously
+PoliteAnticipation: If robot is visible within 5m, human gestures 'EXCUSE ME', if robot is moving and blocking, human waits patiently until path clears

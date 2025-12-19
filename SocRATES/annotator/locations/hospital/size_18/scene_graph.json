@@ -1,0 +1,248 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                346,
+                445
+            ],
+            "id": "82"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                448,
+                444
+            ],
+            "id": "49"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                348,
+                487
+            ],
+            "id": "2c"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                446,
+                487
+            ],
+            "id": "f9"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                398,
+                484
+            ],
+            "id": "8e"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                347,
+                540
+            ],
+            "id": "b2"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                446,
+                543
+            ],
+            "id": "c0"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                397,
+                543
+            ],
+            "id": "12"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                350,
+                590
+            ],
+            "id": "40"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                446,
+                594
+            ],
+            "id": "01"
+        },
+        {
+            "type": "BLIND CORNER",
+            "pos": [
+                447,
+                643
+            ],
+            "id": "26"
+        },
+        {
+            "type": "SIMPLE NODE",
+            "pos": [
+                393,
+                643
+            ],
+            "id": "d8"
+        },
+        {
+            "type": "INTERSECTION",
+            "pos": [
+                346,
+                642
+            ],
+            "id": "59"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                309,
+                605
+            ],
+            "id": "f0"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                308,
+                670
+            ],
+            "id": "6a"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                461,
+                685
+            ],
+            "id": "f3"
+        },
+        {
+            "type": "PASSAGEWAY END",
+            "pos": [
+                346,
+                700
+            ],
+            "id": "ba"
+        },
+        {
+            "type": "INSIDE ROOM",
+            "pos": [
+                487,
+                608
+            ],
+            "id": "e4"
+        }
+    ],
+    "links": [
+        {
+            "type": "PASSAGEWAY",
+            "source": "82",
+            "target": "2c"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "49",
+            "target": "f9"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "2c",
+            "target": "8e"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "2c",
+            "target": "b2"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "f9",
+            "target": "8e"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "f9",
+            "target": "c0"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "b2",
+            "target": "12"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "b2",
+            "target": "40"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "c0",
+            "target": "12"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "c0",
+            "target": "01"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "40",
+            "target": "59"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "01",
+            "target": "26"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "26",
+            "target": "d8"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "26",
+            "target": "f3"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "26",
+            "target": "e4"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "d8",
+            "target": "59"
+        },
+        {
+            "type": "PASSAGEWAY",
+            "source": "59",
+            "target": "ba"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "59",
+            "target": "6a"
+        },
+        {
+            "type": "DOORWAY",
+            "source": "59",
+            "target": "f0"
+        }
+    ]
+}
