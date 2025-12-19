@@ -22,6 +22,8 @@ You can generate a scenario in 3 steps:
 - Generate components of the scenario (robot&human trajectories and human behaviors)
 - Simulate the scenario in Gazebo
 
+To make things simple, you can use the GUI with ``python3 socrates_gui.py`` where all these steps can be performed. Run it from within the SocRATES folder
+
 ### Map Annotation (requires map.yaml, map.png)
 
 - We have provided sample maps in the ``locations`` folder for reference. This step is optional. If you just want to simulate scenarios in the warehouse environment, skip this step.
