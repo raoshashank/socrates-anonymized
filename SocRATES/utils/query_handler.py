@@ -1,5 +1,5 @@
 from click import edit
-from utils.llm_models import models
+from utils.llm_models import build_model
 from utils.scene_graph import SceneGraph
 from prompts import *
 from utils import utils
@@ -14,17 +14,14 @@ class QueryHandler:
         #     model_name = config['model']['model_name'],
         #     debug = config['debug'])
 
-        self.scenario_model = models[config['scenario_model']['model_type']](
-            model_name = config['scenario_model']['model_name'],
-            debug = config['debug'],seed = config['seed'])
+        self.scenario_model = build_model(
+            config['scenario_model'], debug=config['debug'], seed=config['seed'])
 
-        self.trajectory_model = models[config['trajectory_model']['model_type']](
-            model_name = config['trajectory_model']['model_name'],
-            debug = config['debug'],seed = config['seed'])
-        
-        self.bt_model = models[config['bt_model']['model_type']](
-            model_name = config['bt_model']['model_name'],
-            debug = config['debug'],seed = config['seed'])
+        self.trajectory_model = build_model(
+            config['trajectory_model'], debug=config['debug'], seed=config['seed'])
+
+        self.bt_model = build_model(
+            config['bt_model'], debug=config['debug'], seed=config['seed'])
         
         self.debug = config['debug']
         self.token_usage = {
@@ -89,8 +86,9 @@ class QueryHandler:
                         if self.debug:
                             eprint("Scenario Response invalid")
                         raise ValueError('Invalid response, retrying')
-        except tenacity.RetryError :
+        except tenacity.RetryError as e:
             eprint("Failed to generate scenario")
+            print(e)
             return None           
         return scq_response_structured
     
@@ -508,7 +506,7 @@ class QueryHandler:
                                 "content":[
                                     {
                                         "type":"text",
-                                        "text": btq_response.choices[0].message.to_json()
+                                        "text": btq_response_structured.json()
                                     }
                                 ]
                             })
@@ -539,7 +537,7 @@ class QueryHandler:
                                 "content":[
                                     {
                                         "type":"text",
-                                        "text": btq_response.choices[0].message.to_json()
+                                        "text": btq_response_structured.json()
                                     }
                                 ]
                             })
