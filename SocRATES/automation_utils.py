@@ -9,6 +9,11 @@ from rclpy.qos import QoSProfile, HistoryPolicy, DurabilityPolicy, ReliabilityPo
 
 def generate_scenario(full_conf, skip_simulation=False):
     """Generate scenario using existing map (skipping map annotation)"""
+    cprint("Using LLM models:", "cyan", attrs=["bold"])
+    for stage in ('scenario_model', 'trajectory_model', 'bt_model'):
+        mcfg = full_conf.get(stage, {})
+        provider = mcfg.get('provider') or mcfg.get('model_type') or 'openai'
+        cprint(f"  {stage.replace('_model', ''):<10}: {provider}/{mcfg.get('model_name')}", "cyan")
     cprint("Generating scenario from existing map...", "blue")
     outputs = {}
     file_paths = OmegaConf.merge(full_conf['hunav_sim'],full_conf['paths'])
@@ -227,7 +232,27 @@ def run_socrates(
     #scenario generation (optional)-> scenario launch -> nav2run -> record video -> kill ros
     outputs = {}
     config = OmegaConf.load('config.yaml')  
-    full_conf = OmegaConf.merge(config, inputs)  
+    full_conf = OmegaConf.merge(config, inputs)
+    
+    world_location = full_conf['location']['world_location']
+    full_conf['location']['scene_graph_file'] = os.path.join(world_location,'scene_graph.json')
+    full_conf['location']['annotated_map_img_file'] = os.path.join(world_location,'scene_graph.png')
+    full_conf['location']['map_params_file'] = os.path.join(world_location,'map','map.yaml')
+    
+    if not os.path.exists(full_conf['location']['scene_graph_file']):
+        cprint(f"✗ Scene graph file not found at {full_conf['location']['scene_graph_file']}. Please ensure the scene graph is generated.", "red")
+        outputs['failure_reason'] = f"Scene graph file not found at {full_conf['location']['scene_graph_file']}"
+        return False, outputs
+    if not os.path.exists(full_conf['location']['annotated_map_img_file']):
+        cprint(f"✗ Annotated map image file not found at {full_conf['location']['annotated_map_img_file']}. Please ensure the annotated map is generated.", "red")
+        outputs['failure_reason'] = f"Annotated map image file not found at {full_conf['location']['annotated_map_img_file']}"
+        return False, outputs
+    if not os.path.exists(full_conf['location']['map_params_file']):
+        cprint(f"✗ Map parameters file not found at {full_conf['location']['map_params_file']}. Please ensure the map parameters are generated.", "red")
+        outputs['failure_reason'] = f"Map parameters file not found at {full_conf['location']['map_params_file']}"
+        return False, outputs
+    
+      
     output_file_path = os.path.join(experiment_dir,'scenario_generation_outputs.json')
     #1. Generate scenario 
     if not skip_generation: 
