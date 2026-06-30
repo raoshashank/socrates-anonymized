@@ -13,7 +13,9 @@ launch_ros==0.19.7
 networkx==3.2.1
 numpy==2.0.1
 omegaconf==2.3.0
-openai==1.37.1
+openai==1.45.1
+# instructor[google-genai]>=1.7.0    # provider: google (gemini) — pulls google-genai + jsonref
+instructor>=1.7.0
 opencv_python==4.8.0.76
 opencv_python_headless==4.8.0.76
 Pillow==10.4.0
