@@ -5,20 +5,40 @@ hunav_sim:
   hpp_dir: 'hunav_agent_manager/include/hunav_agent_manager'
 
 seed: 1
+# LLM backend configuration.
+# Each query stage (scenario / trajectory / bt) can use a different provider+model.
+#   provider:   which LLM backend to use. Routed through the `instructor` library,
+#               so any instructor-supported provider works. Examples:
+#                 openai     -> model_name: "gpt-4.1", "gpt-4o", "gpt-5"
+#                 anthropic  -> model_name: "claude-opus-4-8", "claude-sonnet-4-6",
+#                                            "claude-haiku-4-5-20251001"   (set max_tokens)
+#                 google     -> model_name: "gemini-2.5-flash", "gemini-2.5-pro"
+#                 mistral    -> model_name: "mistral-large-latest"
+#                 groq       -> model_name: "llama-3.3-70b-versatile"
+#                 ollama     -> model_name: "llama3.2"   (local)
+#               Use provider: "gpt-native" for OpenAI's native structured-output
+#               parse instead of instructor (OpenAI only).
+#   model_name: the provider's model id.
+#   Optional per-model keys: temperature, max_tokens (required for anthropic),
+#                            max_retries, extra_kwargs.
+# Set the matching API key in the environment (OPENAI_API_KEY, ANTHROPIC_API_KEY,
+# GEMINI_API_KEY / GOOGLE_API_KEY, ...).
+
 scenario_model:
- model_type: "gpt"  # "gemini-1.0-pro-vision"re
- model_name: "gpt-4.1" #"gpt-4o-2024-08-06" #"gpt-5"
- #temperature: 0.5
+  provider: "openai"
+  model_name: "gpt-4o"
+  # temperature: 0.5
+  # max_tokens: 4096        # required when provider is anthropic
 
 trajectory_model:
- model_type: "gpt"  # "gemini-1.0-pro-vision"
- model_name: "gpt-4.1" #"gpt-4o-202
- #temperature: 0.5
+  provider: "openai"        # this stage sends images: use a vision-capable model
+  model_name: "gpt-4o"     #   (openai gpt-4.1/4o, anthropic claude-*, google gemini-* all support vision)
+  # temperature: 0.5
 
 bt_model:
-  model_type: "gpt"  # "gemini-1.0-pro-vision"
-  model_name: "gpt-4.1" #"gpt-5" #"gpt-4o-2024-08-06" #"gpt-5"
-  #temperature: 0.5
+  provider: "openai"
+  model_name: "gpt-4o"
+  # temperature: 0.5
 
 num_scenario_proposals: 5
 
