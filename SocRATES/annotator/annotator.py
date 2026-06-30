@@ -11,9 +11,10 @@ import json
 import secrets
 import numpy as np
 from omegaconf import OmegaConf
-
+import argparse
+ANNOTATOR_FILE_PATH = os.path.abspath(__file__).replace('annotator.py','')
 class SceneGraphBuilder:
-    def __init__(self, root, zoom_in,zoom_out,image_path, scgraph_path, out_path, node_types, edge_types,font_size=5):
+    def __init__(self, root, zoom_in,zoom_out,image_path, scgraph_path, output_image_save_path, node_types, edge_types,font_size=5):
         self.root = root
         self.root.title("Scene Graph Builder")
         # Load image
@@ -97,7 +98,7 @@ class SceneGraphBuilder:
         self.current_start_node = None
         self.zoomed_images = {}
         self.zoomed_images_draw = {}
-        self.img_save_path = out_path
+        self.img_save_path = output_image_save_path
         self.image_origin = np.array([0.0,0.0])
         self.zimgfont = "nimbus"
         self.pimgfont = "nimbus"
@@ -451,8 +452,40 @@ class SceneGraphBuilder:
         print(nx.info(self.graph))
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Scene Graph Builder")
+    parser.add_argument('--world', type=str, help='Path to the configuration YAML file')
+    args = parser.parse_args()
+    zoom_config = OmegaConf.load(os.path.join(ANNOTATOR_FILE_PATH, 'config.yaml'))
+    try:
+        location_global_config = OmegaConf.load('location_descriptions.yaml')   
+    except FileNotFoundError:
+        print("Configuration file 'location_descriptions.yaml' not found. Please only run annotator from the SocRATES directory!.")
+        exit(1)
+    config = location_global_config.get(args.world, None)
+    if config is None:
+        print(f"World '{args.world}' not found in configuration. Please check the world name. Please fill the location_descriptions.yaml file with the correct world name and its configuration.")
+        exit(1)
+    config = OmegaConf.merge(zoom_config, config)
+    print(f"Loaded configuration for world '{args.world}': {config}")
     
-    config = OmegaConf.load('config.yaml')   
+    if not os.path.isdir(config['world_location']):
+        print(f"World location '{config['world_location']}' does not exist. Please check the path in the configuration and ensure the world files are in a single isolated folder.")
+        exit(1)
+        
+    map_img_file = os.path.join(config['world_location'],'map','map.pgm')
+    map_yaml_file = os.path.join(config['world_location'],'map','map.yaml')
+    if not os.path.exists(map_img_file) or not os.path.exists(map_yaml_file):
+        print(f"Map files not found for world '{args.world}'. Please ensure that 'map.pgm' and 'map.yaml' exist in the 'map' directory of the world location.")
+        exit(1)
+    scene_graph_image_path = os.path.join(config['world_location'],'scene_graph.png')
+    scene_graph_json_path = os.path.join(config['world_location'],'scene_graph.json')
+    
+    if len(config['node_types']) == 0 or len(config['edge_types']) == 0:
+        print(f"Node types or edge types are not defined for world '{args.world}'. Please ensure that 'node_types' and 'edge_types' are specified in the configuration.")
+        exit(1)
+    node_types = config['node_types']
+    edge_types = config['edge_types']
+    
     root = tk.Tk()
     fine_root = tk.Tk()
     
@@ -466,6 +499,13 @@ if __name__ == "__main__":
     Alt+S: Save all images
 ---------ADD NODES FOR THE FOLLOWING REGIONS IN YOUR MAP---------""" +'\n'+ '\n'.join([f"{i+1}:{n}" for i,n in enumerate(config['node_types'])]) + '\n'+"""-- CONNECT THE NODES WITH EDGES OF THE FOLLOWING TYPES----------"""+ '\n'+'\n'.join([f"{i+1}:{n}" for i,n in enumerate(config['edge_types'])]) + '\n'+"""--------------------------------------------------------------------"""
     print(msg)
-    app = SceneGraphBuilder(root, float(config['zoom_in']), float(config['zoom_out']),config['img'],config['scg'],config['out'],config['node_types'],config['edge_types'],
-                            font_size=float(config['font_size']))  # Replace with your own image path
+    app = SceneGraphBuilder(root = root, 
+                            zoom_in = float(config['zoom_in']), 
+                            zoom_out = float(config['zoom_out']),
+                            image_path = map_img_file,
+                            scgraph_path = scene_graph_json_path,
+                            output_image_save_path = scene_graph_image_path,
+                            node_types = node_types,
+                            edge_types = edge_types,
+                            font_size=int(config['font_size']))  # Replace with your own image path
     root.mainloop()
