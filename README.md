@@ -6,6 +6,7 @@ A ROS2-Gazebo scenario generator for evaluating social navigation algorithms uti
 
 - This package is tested on ROS2 Humble, Gazebo v11.10.2 with python 3.9. Currently, we support querying any GPT-based model.
 - Install the required python packages from requirements.txt
+- Download and unzip the following folder of world assets to hunav_gazebo_wrapper/media folder: [Assets](https://drive.google.com/file/d/1xwO6f9WSZqtOApecVqcDO3f26ZjLpI1H/view?usp=sharing)
 - build and install the included hunav_sim and hunav_gazebo_wrapper ROS2 in your colcon workspace and source the setup.bash file
 
 SocRATES consists of 3 submodules:
